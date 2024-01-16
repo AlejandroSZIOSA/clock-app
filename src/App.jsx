@@ -21,7 +21,7 @@ function Timer() {
   return (
     <>
       <div>
-        <h2>TimeR: {counter}</h2>
+        <h2>Timer: {counter}</h2>
       </div>
     </>
   );
