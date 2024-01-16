@@ -1,36 +1,11 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import Clock from "./components/Clock";
-
-function Timer() {
-  const [counter, setCounter] = useState(0);
-  const [isCounting, setIIsCounting] = useState(false);
-
-  useEffect(() => {
-    function timer() {
-      setCounter((c) => c + 1);
-    }
-
-    const intervalId = setInterval(timer, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
-  return (
-    <>
-      <div>
-        <h2>Timer: {counter}</h2>
-      </div>
-    </>
-  );
-}
+import Timer from "./components/Timer";
 
 function App() {
   return (
     <>
-      <Timer />
+      <Timer countdown={10} />
       {/* <Clock city="Santiago" timezone="America" /> */}
     </>
   );
