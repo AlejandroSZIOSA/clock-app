@@ -8,7 +8,10 @@ export default function Clock({ city, timezone }) {
   }, []);
 
   function myTimer() {
-    const date = new Date().toLocaleTimeString();
+    const date = new Date().toLocaleTimeString("en", {
+      timeZone: `${timezone}/${city}`,
+    });
+    /* console.log(date); */
     setTime(date);
   }
 
