@@ -1,22 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function Timer({ countdown = 100 }) {
-  const [counter, setCounter] = useState(countdown);
+export default function CountdownTimer({ initialSeconds = 100 }) {
+  const [counter, setCounter] = useState(initialSeconds);
   const [isCounting, setIsCounting] = useState(true);
 
   useEffect(() => {
+    if (counter <= 0) {
+      return;
+    }
+
     function timer() {
       setCounter((c) => c - 1);
-
-      /* setCounter((c) => {
-        if (counter >= 0) {
-          return;
-          c - 1;
-        } else {
-          clearInterval(intervalId);
-          return 0;
-        }
-      }); */
     }
 
     const intervalId = setInterval(timer, 1000);
@@ -24,14 +18,16 @@ export default function Timer({ countdown = 100 }) {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [counter]);
+
+  function timer() {}
 
   return (
     <>
       <h1>TIMER</h1>
       <div>
         <h2>
-          Set CountDown = <span>{countdown}</span>
+          Set CountDown = <span>{initialSeconds}</span>
         </h2>
       </div>
       <div>
