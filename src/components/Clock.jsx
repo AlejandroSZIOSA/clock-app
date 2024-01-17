@@ -8,11 +8,11 @@ export default function Clock({ city, timezone }) {
   }, []);
 
   function myClock() {
-    const time = new Date().toLocaleTimeString("en", {
+    const selectedTimeZone = new Date().toLocaleTimeString("en", {
       timeZone: `${timezone}/${city}`,
     });
     /* console.log(date); */
-    setCurrentTime(time);
+    setCurrentTime(selectedTimeZone);
   }
 
   const styles = {
