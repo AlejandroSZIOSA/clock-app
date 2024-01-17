@@ -5,11 +5,10 @@ import CountdownTimer from "./components/CountdownTimer";
 function App() {
   return (
     <>
-      <CountdownTimer initialSeconds={10} />
+      {/* <CountdownTimer initialSeconds={60} /> */}
 
-      {/* <Clock city="Santiago" timezone="America" /> */}
+      <Clock city="Santiago" timezone="America" />
     </>
   );
 }
-
 export default App;

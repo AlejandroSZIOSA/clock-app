@@ -1,38 +1,56 @@
 import { useState, useEffect } from "react";
 
 export default function CountdownTimer({ initialSeconds = 100 }) {
-  const [counter, setCounter] = useState(initialSeconds);
+  const [seconds, setSeconds] = useState(initialSeconds);
   const [isCounting, setIsCounting] = useState(true);
 
+  //UseEffect Hook
   useEffect(() => {
-    if (counter <= 0) {
+    //Goes outside useEffect when seconds reach "0"
+    if (seconds <= 0) {
       return;
     }
-
-    function timer() {
-      setCounter((c) => c - 1);
-    }
-
-    const intervalId = setInterval(timer, 1000);
+    timer; //Calling a function by reference
+    const intervalId = setInterval(timer, 1000); //Set new Seconds value
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [counter]);
+  }, [seconds]); //Dependency: When useState hook "seconds" changes, then will useEffect renders again until reach "0"
 
-  function timer() {}
+  //Set initial Seconds value
+  function timer() {
+    setSeconds((c) => c - 1);
+  }
 
+  //Give a time output format
+  const formatTime = (currentSeconds) => {
+    const minutes = Math.floor(currentSeconds / 60)
+      .toString()
+      .padStart(2, "0");
+    const seconds = (currentSeconds % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
+  };
+
+  const styles = {
+    container: {
+      display: "flex",
+      flexDirection: "row",
+      gap: "3rem",
+      background: "yellow",
+      padding: "0rem 2rem 0rem 2rem",
+      border: "4px solid",
+      borderRadius: "10px",
+    },
+  };
   return (
-    <>
-      <h1>TIMER</h1>
+    <div style={styles.container}>
       <div>
-        <h2>
-          Set CountDown = <span>{initialSeconds}</span>
-        </h2>
+        <h2>Timer = {initialSeconds} Sec</h2>
       </div>
       <div>
-        <h2>Timer: {counter}</h2>
+        <h2>Countdown = {formatTime(seconds)} Min/Sec</h2>
       </div>
-    </>
+    </div>
   );
 }
