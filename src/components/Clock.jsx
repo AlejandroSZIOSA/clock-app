@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
 export default function Clock({ city, timezone }) {
-  const [time, setTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
     setInterval(myClock, 1000);
   }, []);
 
   function myClock() {
-    const date = new Date().toLocaleTimeString("en", {
+    const time = new Date().toLocaleTimeString("en", {
       timeZone: `${timezone}/${city}`,
     });
     /* console.log(date); */
-    setTime(date);
+    setCurrentTime(time);
   }
 
   const styles = {
@@ -33,7 +33,7 @@ export default function Clock({ city, timezone }) {
         <h2>Time Zone: {timezone}</h2>
       </div>
       <div>
-        <h1>Time: {time}</h1>
+        <h1>Time: {currentTime}</h1>
       </div>
     </div>
   );
