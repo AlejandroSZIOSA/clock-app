@@ -17,23 +17,24 @@ export default function Clock({ city, timezone }) {
 
   const styles = {
     container: {
+      width: "300px",
       display: "flex",
       flexDirection: "column",
       backgroundColor: "aqua",
-      padding: "10px",
       border: "10px solid blue",
       borderRadius: "15px",
+      textAlign: "center",
     },
   };
 
   return (
     <div style={styles.container}>
       <div>
-        <h1> City: {city}</h1>
-        <h2>Time Zone: {timezone}</h2>
+        <h3> City: {city}</h3>
+        <h3>Time Zone: {timezone}</h3>
       </div>
       <div>
-        <h1>Time: {currentTime}</h1>
+        <h2>Time: {currentTime}</h2>
       </div>
     </div>
   );

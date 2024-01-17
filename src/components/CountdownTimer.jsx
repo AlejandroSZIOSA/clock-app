@@ -34,13 +34,14 @@ export default function CountdownTimer({ initialSeconds = 100 }) {
 
   const styles = {
     container: {
+      width: "600px",
       display: "flex",
       flexDirection: "row",
       gap: "3rem",
       background: "yellow",
       padding: "0rem 2rem 0rem 2rem",
-      border: "4px solid",
-      borderRadius: "10px",
+      border: "5px solid",
+      borderRadius: "15px",
     },
   };
   return (
