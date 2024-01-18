@@ -1,6 +1,6 @@
 import "./App.css";
 import Clock from "./components/Clock";
-import CountdownTimer from "./components/CountdownTimer";
+import Timer from "./components/Timer";
 
 function App() {
   const styles = {
@@ -8,29 +8,28 @@ function App() {
       display: "flex",
       flexDirection: "column",
     },
+    clocksContainer: {
+      display: "flex",
+      flexDirection: "row",
+      gap: "25px",
+    },
   };
 
   return (
     <div style={styles.container}>
-      <h1> Clock's Zones</h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "25px",
-        }}
-      >
+      <h1> Clocks</h1>
+      <div style={styles.clocksContainer}>
         <Clock city="Santiago" timezone="America" />
         <Clock city="London" timezone="Europe" />
       </div>
 
       <div>
-        <h1> Countdowns</h1>
-        <CountdownTimer initialSeconds={60} />
+        <h1> Timers</h1>
+        <Timer initialSeconds={60} />
         <br />
-        <CountdownTimer initialSeconds={200} />
+        <Timer initialSeconds={200} />
         <br />
-        <CountdownTimer initialSeconds={500} />
+        <Timer initialSeconds={500} />
       </div>
     </div>
   );

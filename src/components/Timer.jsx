@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default function CountdownTimer({ initialSeconds = 100 }) {
+export default function Timer({ initialSeconds = 100 }) {
   const [seconds, setSeconds] = useState(initialSeconds);
-  const [isCounting, setIsCounting] = useState(true);
 
   //UseEffect Hook
   useEffect(() => {
@@ -23,7 +22,7 @@ export default function CountdownTimer({ initialSeconds = 100 }) {
     setSeconds((c) => c - 1);
   }
 
-  //Give a time output format
+  //Arrow function Gives a time format output
   const formatTime = (currentSeconds) => {
     const minutes = Math.floor(currentSeconds / 60)
       .toString()
