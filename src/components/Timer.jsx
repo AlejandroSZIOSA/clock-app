@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import classes from "./Timer.module.css";
 
 export default function Timer({ initialSeconds = 100 }) {
   const [seconds, setSeconds] = useState(initialSeconds);
@@ -31,25 +32,11 @@ export default function Timer({ initialSeconds = 100 }) {
     return `${minutes}:${seconds}`;
   };
 
-  const styles = {
-    container: {
-      width: "600px",
-      display: "flex",
-      flexDirection: "row",
-      gap: "3rem",
-      background: "yellow",
-      padding: "0rem 2rem 0rem 2rem",
-      border: "5px solid",
-      borderRadius: "15px",
-    },
-  };
   return (
-    <div style={styles.container}>
+    <div className={classes.timerContainer}>
+      <h2>Timer = {initialSeconds} Sec</h2>
       <div>
-        <h2>Timer = {initialSeconds} Sec</h2>
-      </div>
-      <div>
-        <h2>Countdown = {formatTime(seconds)} Min/Sec</h2>
+        <h3>Countdown = {formatTime(seconds)} Min/Sec</h3>
       </div>
     </div>
   );

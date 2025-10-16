@@ -1,0 +1,14 @@
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  background: yellow;
+  padding: 0rem 2rem 0rem 2rem;
+  border: 5px solid;
+  border-radius: 15px;
+  align-items: anchor-center;
+}
+
+.timerContainer div h3 {
+  width: max-content;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from "./Clock.module.css";
 
 export default function Clock({ city, timezone }) {
   const [currentTime, setCurrentTime] = useState(0);
@@ -15,26 +16,14 @@ export default function Clock({ city, timezone }) {
     setCurrentTime(selectedTimeZone);
   }
 
-  const styles = {
-    container: {
-      width: "300px",
-      display: "flex",
-      flexDirection: "column",
-      backgroundColor: "aqua",
-      border: "10px solid blue",
-      borderRadius: "15px",
-      textAlign: "center",
-    },
-  };
-
   return (
-    <div style={styles.container}>
+    <div className={classes.clockContainer}>
       <div>
         <h3> City: {city}</h3>
-        <h3>Time Zone: {timezone}</h3>
+        <p>Time Zone: {timezone}</p>
       </div>
       <div>
-        <h2>Time: {currentTime}</h2>
+        <h3>Time: {currentTime}</h3>
       </div>
     </div>
   );

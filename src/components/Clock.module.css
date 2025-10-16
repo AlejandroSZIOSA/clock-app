@@ -1,0 +1,9 @@
+.clockContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  background-color: aqua;
+  border: 5px solid blue;
+  border-radius: 15px;
+  text-align: center;
+}

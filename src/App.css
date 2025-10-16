@@ -1,7 +1,43 @@
 #root {
-  width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /*   width: 1280px; */
+  /*   margin: 0 auto;
+ */ /*   padding: 2rem; */
   /* text-align: center; */
-  background-color: beige;
+  /* background-color: beige; */
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.appContainer h1 {
+  text-align: center;
+}
+
+.appContainer h2 {
+  padding: 1rem 0;
+}
+
+/* .clockOuterContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+} */
+
+.clocksInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.timersOuterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /* align-items: center;
+  gap: 20px;
+  margin-top: 20px; */
 }
