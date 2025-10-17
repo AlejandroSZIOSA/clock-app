@@ -12,14 +12,13 @@ export default function Clock({ city, timezone }) {
     const selectedTimeZone = new Date().toLocaleTimeString("en", {
       timeZone: `${timezone}/${city}`,
     });
-    /* console.log(date); */
     setCurrentTime(selectedTimeZone);
   }
 
   return (
     <div className={classes.clockContainer}>
       <div>
-        <h3> City: {city}</h3>
+        <h2> {city}</h2>
         <p>Time Zone: {timezone}</p>
       </div>
       <div>

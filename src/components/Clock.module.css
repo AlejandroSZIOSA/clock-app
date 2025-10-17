@@ -1,9 +1,24 @@
 .clockContainer {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 60vw;
   background-color: aqua;
   border: 5px solid blue;
   border-radius: 15px;
   text-align: center;
+  padding: 0.6rem;
+}
+
+.clockContainer div h2 {
+  padding-bottom: 0.3rem;
+}
+
+@media (min-width: 1024px) {
+  .clockContainer {
+    width: 15%;
+    padding: 1rem;
+  }
+  .clockContainer div h2 {
+    padding-bottom: 0.5rem;
+  }
 }

@@ -3,12 +3,27 @@
   flex-direction: column;
   width: 90vw;
   background: yellow;
-  padding: 0rem 2rem 0rem 2rem;
+  padding-bottom: 0.6rem;
   border: 5px solid;
   border-radius: 15px;
   align-items: anchor-center;
 }
 
+.timerContainer h2 {
+  padding: 0.5rem 0;
+}
+
 .timerContainer div h3 {
   width: max-content;
+}
+
+@media (min-width: 1024px) {
+  .timerContainer {
+    width: min-content;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .timerContainer h2 {
+    padding: 0.7rem 0;
+  }
 }
