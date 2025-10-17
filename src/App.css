@@ -26,6 +26,7 @@
   gap: 15px;
 }
 
+/* breakpoint for desktop */
 @media (min-width: 1024px) {
   .clocksInnerContainer {
     flex-direction: row;

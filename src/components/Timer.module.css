@@ -17,6 +17,7 @@
   width: max-content;
 }
 
+/* breakpoint for desktop */
 @media (min-width: 1024px) {
   .timerContainer {
     width: min-content;

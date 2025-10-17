@@ -13,6 +13,7 @@
   padding-bottom: 0.3rem;
 }
 
+/* breakpoint for desktop */
 @media (min-width: 1024px) {
   .clockContainer {
     width: 15%;

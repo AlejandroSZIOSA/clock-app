@@ -32,6 +32,7 @@ p {
   font-size: 1rem;
 }
 
+/* breakpoint for desktop */
 @media (min-width: 1024px) {
   h1 {
     font-size: 3rem;
